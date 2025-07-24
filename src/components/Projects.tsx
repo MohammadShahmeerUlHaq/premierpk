@@ -73,8 +73,12 @@ export const Projects = () => {
                 From manufacturing facilities to commercial complexes, we deliver 
                 reliable and efficient electrical infrastructure that meets the highest standards.
               </p>
-              <Button variant="professional" className="w-fit">
-                View Project Details
+              <Button 
+                variant="professional" 
+                className="w-fit"
+                onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                View Project Gallery
               </Button>
             </div>
           </div>
@@ -116,7 +120,11 @@ export const Projects = () => {
             across different sectors. Our commitment to excellence ensures timely delivery 
             and superior quality in every project.
           </p>
-          <Button variant="cta" size="lg">
+          <Button 
+            variant="cta" 
+            size="lg"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Discuss Your Project
           </Button>
         </div>

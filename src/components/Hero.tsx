@@ -24,14 +24,14 @@ export const Hero = () => {
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 animate-slide-up">
-            Premier Electrical
-            <span className="block text-primary">Engineering Solutions</span>
+            <span className="text-primary">Premier</span>
+            <span className="block">Engineering Services</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl animate-fade-in">
-            Specialized manufacturer of electrical switchgears, control panels, and cable management systems. 
-            Excellence in engineering for modern industrial needs.
+            Electricity is the most vital source of energy in this modern era. Excels in the specialised 
+            manufacture export of electrical switchgears and control gears forming a dialogue between man and machine.
           </p>
 
           {/* Key Features */}
@@ -69,11 +69,20 @@ export const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
-            <Button variant="hero" size="xl" className="group">
+            <Button 
+              variant="hero" 
+              size="xl" 
+              className="group"
+              onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               View Our Products
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="xl">
+            <Button 
+              variant="outline" 
+              size="xl"
+              onClick={() => window.open('http://premierpk.com/site/wp-content/uploads/2013/12/Company%20Profile.pdf', '_blank')}
+            >
               Download Company Profile
             </Button>
           </div>

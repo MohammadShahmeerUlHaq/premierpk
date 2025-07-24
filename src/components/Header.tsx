@@ -7,10 +7,15 @@ export const Header = () => {
 
   const navItems = [
     { name: "Home", href: "#home" },
-    { name: "Products", href: "#products" },
+    { name: "Products", href: "#products", 
+      submenu: [
+        { name: "Switchgears", href: "#switchgears" },
+        { name: "Cable Trays / Cable Ladders", href: "#cable-trays" }
+      ]
+    },
     { name: "Projects", href: "#projects" },
     { name: "Gallery", href: "#gallery" },
-    { name: "Contact", href: "#contact" }
+    { name: "Contact Us", href: "#contact" }
   ];
 
   return (
@@ -21,11 +26,11 @@ export const Header = () => {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4" />
-              <span>+92 (0) 300 XXX XXXX</span>
+              <span>+92 42 35881672</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4" />
-              <span>info@premierpk.com</span>
+              <span>premierpk@yahoo.com</span>
             </div>
           </div>
         </div>
@@ -34,9 +39,16 @@ export const Header = () => {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="bg-gradient-hero text-primary-foreground px-4 py-2 rounded-lg shadow-card">
-              <h1 className="text-xl font-bold">PREMIER</h1>
-              <p className="text-xs opacity-90">Engineering Services</p>
+            <div className="flex items-center gap-3">
+              <div className="bg-primary text-primary-foreground p-2 rounded-lg">
+                <div className="w-8 h-8 bg-primary-foreground text-primary rounded flex items-center justify-center">
+                  <span className="text-sm font-bold">P</span>
+                </div>
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-primary">PREMIER</h1>
+                <p className="text-xs text-muted-foreground">Engineering Services</p>
+              </div>
             </div>
           </div>
 
@@ -55,7 +67,11 @@ export const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="cta" size="lg">
+            <Button 
+              variant="cta" 
+              size="lg"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Get Quote
             </Button>
           </div>
@@ -83,7 +99,14 @@ export const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <Button variant="cta" className="mt-4">
+              <Button 
+                variant="cta" 
+                className="mt-4"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Get Quote
               </Button>
             </nav>

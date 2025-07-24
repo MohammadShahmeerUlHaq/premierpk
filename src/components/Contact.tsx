@@ -15,6 +15,19 @@ import {
 } from "lucide-react";
 
 export const Contact = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData);
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(data.subject as string || 'Inquiry from Website');
+    const body = encodeURIComponent(
+      `Name: ${data.name}\nCompany: ${data.company}\nPhone: ${data.phone}\n\nMessage:\n${data.message}`
+    );
+    window.location.href = `mailto:premierpk@yahoo.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <section id="contact" className="py-20 bg-gradient-accent">
       <div className="container mx-auto px-4">
@@ -45,7 +58,7 @@ export const Contact = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <p className="font-semibold">+92 (0) 300 XXX XXXX</p>
+                  <p className="font-semibold">+92 42 35881672</p>
                   <p className="text-sm text-muted-foreground">Sales & Inquiries</p>
                 </div>
               </CardContent>
@@ -60,7 +73,7 @@ export const Contact = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <p className="font-semibold">info@premierpk.com</p>
+                  <p className="font-semibold">premierpk@yahoo.com</p>
                   <p className="text-sm text-muted-foreground">General Inquiries</p>
                 </div>
               </CardContent>
@@ -75,8 +88,8 @@ export const Contact = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <p className="font-semibold">Lahore, Pakistan</p>
-                  <p className="text-sm text-muted-foreground">Industrial Area</p>
+                  <p className="font-semibold">24-B, Block E, Gulberg III</p>
+                  <p className="text-sm text-muted-foreground">Lahore, Pakistan</p>
                 </div>
               </CardContent>
             </Card>
@@ -107,19 +120,19 @@ export const Contact = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
                         Full Name *
                       </label>
-                      <Input id="name" placeholder="John Doe" required />
+                      <Input id="name" name="name" placeholder="John Doe" required />
                     </div>
                     <div>
                       <label htmlFor="company" className="block text-sm font-medium mb-2">
                         Company
                       </label>
-                      <Input id="company" placeholder="Your Company" />
+                      <Input id="company" name="company" placeholder="Your Company" />
                     </div>
                   </div>
 
@@ -128,13 +141,13 @@ export const Contact = () => {
                       <label htmlFor="email" className="block text-sm font-medium mb-2">
                         Email Address *
                       </label>
-                      <Input id="email" type="email" placeholder="john@example.com" required />
+                      <Input id="email" name="email" type="email" placeholder="john@example.com" required />
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium mb-2">
                         Phone Number
                       </label>
-                      <Input id="phone" type="tel" placeholder="+92 300 XXX XXXX" />
+                      <Input id="phone" name="phone" type="tel" placeholder="+92 42 XXXX XXXX" />
                     </div>
                   </div>
 
@@ -142,7 +155,7 @@ export const Contact = () => {
                     <label htmlFor="subject" className="block text-sm font-medium mb-2">
                       Subject *
                     </label>
-                    <Input id="subject" placeholder="Electrical Infrastructure Project" required />
+                    <Input id="subject" name="subject" placeholder="Electrical Infrastructure Project" required />
                   </div>
 
                   <div>
@@ -151,13 +164,14 @@ export const Contact = () => {
                     </label>
                     <Textarea 
                       id="message" 
+                      name="message"
                       placeholder="Please describe your project requirements or inquiry in detail..."
                       rows={6}
                       required 
                     />
                   </div>
 
-                  <Button variant="hero" size="lg" className="w-full">
+                  <Button type="submit" variant="hero" size="lg" className="w-full">
                     <Send className="w-5 h-5 mr-2" />
                     Send Message
                   </Button>
@@ -177,7 +191,11 @@ export const Contact = () => {
             <p className="text-sm text-muted-foreground mb-4">
               Get expert advice on your electrical infrastructure needs
             </p>
-            <Button variant="outline" size="sm">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => window.location.href = 'tel:+924235881672'}
+            >
               Schedule Call
             </Button>
           </Card>
@@ -190,7 +208,11 @@ export const Contact = () => {
             <p className="text-sm text-muted-foreground mb-4">
               Get detailed information about our products and services
             </p>
-            <Button variant="outline" size="sm">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => window.open('http://premierpk.com/site/wp-content/uploads/2013/12/Company%20Profile.pdf', '_blank')}
+            >
               Download PDF
             </Button>
           </Card>
@@ -203,7 +225,11 @@ export const Contact = () => {
             <p className="text-sm text-muted-foreground mb-4">
               Schedule a site visit for detailed project assessment
             </p>
-            <Button variant="outline" size="sm">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => window.location.href = 'mailto:premierpk@yahoo.com?subject=Site Visit Request&body=I would like to schedule a site visit for project assessment.'}
+            >
               Book Visit
             </Button>
           </Card>

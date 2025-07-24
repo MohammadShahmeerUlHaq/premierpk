@@ -105,8 +105,12 @@ export const Products = () => {
                   )}
                 </div>
 
-                <Button variant="professional" className="w-full">
-                  View All Products
+                <Button 
+                  variant="professional" 
+                  className="w-full"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Request Quote
                 </Button>
               </CardContent>
             </Card>
