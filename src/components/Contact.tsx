@@ -25,7 +25,7 @@ export const Contact = () => {
     const body = encodeURIComponent(
       `Name: ${data.name}\nCompany: ${data.company}\nPhone: ${data.phone}\n\nMessage:\n${data.message}`
     );
-    window.location.href = `mailto:premierpk@yahoo.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@premierpk.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -58,7 +58,9 @@ export const Contact = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <p className="font-semibold">+92 42 35881672</p>
+                  <p className="font-semibold">021-35898292</p>
+                  <p className="font-semibold">021-35898293</p>
+                  <p className="font-semibold">34299111</p>
                   <p className="text-sm text-muted-foreground">Sales & Inquiries</p>
                 </div>
               </CardContent>
@@ -73,7 +75,7 @@ export const Contact = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <p className="font-semibold">premierpk@yahoo.com</p>
+                  <p className="font-semibold">info@premierpk.com</p>
                   <p className="text-sm text-muted-foreground">General Inquiries</p>
                 </div>
               </CardContent>
@@ -88,8 +90,9 @@ export const Contact = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <p className="font-semibold">24-B, Block E, Gulberg III</p>
-                  <p className="text-sm text-muted-foreground">Lahore, Pakistan</p>
+                  <p className="font-semibold">559, Street No 10, Sector D</p>
+                  <p className="font-semibold">Rehman Colony, Mehmoodabad</p>
+                  <p className="text-sm text-muted-foreground">Karachi, Pakistan</p>
                 </div>
               </CardContent>
             </Card>
@@ -194,7 +197,7 @@ export const Contact = () => {
             <Button 
               variant="outline" 
               size="sm"
-              onClick={() => window.location.href = 'tel:+924235881672'}
+              onClick={() => window.location.href = 'tel:02135898292'}
             >
               Schedule Call
             </Button>
@@ -228,7 +231,7 @@ export const Contact = () => {
             <Button 
               variant="outline" 
               size="sm"
-              onClick={() => window.location.href = 'mailto:premierpk@yahoo.com?subject=Site Visit Request&body=I would like to schedule a site visit for project assessment.'}
+              onClick={() => window.location.href = 'mailto:info@premierpk.com?subject=Site Visit Request&body=I would like to schedule a site visit for project assessment.'}
             >
               Book Visit
             </Button>
