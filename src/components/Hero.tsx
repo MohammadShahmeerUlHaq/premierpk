@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-electrical.jpg";
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20">
+    <section id="home" className="relative min-h-screen flex items-center pt-32">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

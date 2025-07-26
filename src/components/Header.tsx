@@ -26,11 +26,11 @@ export const Header = () => {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4" />
-              <span>+92 42 35881672</span>
+              <span>021-35898292</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4" />
-              <span>premierpk@yahoo.com</span>
+              <span>info@premierpk.com</span>
             </div>
           </div>
         </div>
